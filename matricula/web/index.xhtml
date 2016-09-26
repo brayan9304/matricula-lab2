@@ -12,8 +12,7 @@
         <h:outputScript library="js" name="jquery.js"/>
         
     </h:head>
-    <body class="background" id="index">
-
+    <h:body class="background" id="index">
 
         <h:form>
             <h:commandButton action="#{matriculaBean.changeLanguage('')}" value="English"
@@ -52,20 +51,11 @@
                         <p:inputText id="semester" label="#{msg.semestre}"
                                      value="#{matriculaBean.semestre}" required="true">
                             <f:attribute name="requiredMessage" value="#{msg.id_required}" />
-                            <f:validateLength maximum="2" />
-                        </p:inputText>            
-                        <p:message for="semester" styleClass="errormsg"/>
+                            <f:validateLength minimum="5" maximum="5" />
+                        </p:inputText>   
                         
-                        
-                   
-                      
-                    
                        
-                    
-                        
-                    
-                    
-                    
+                
                     </h:panelGrid>  
                 
                 <br/>
@@ -108,6 +98,6 @@
                                  update="@form:x" />
             </h:form>     
         </center>
-    </body>
+    </h:body>
 </html>
 
