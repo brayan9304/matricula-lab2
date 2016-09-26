@@ -3,9 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/daemonsoft/NetBeansProjects/matricula/src/java/com/udea/controlador/MatriculaBean.java</file>
-            <file>file:/home/daemonsoft/NetBeansProjects/matricula/web/index.xhtml</file>
-            <file>file:/home/daemonsoft/NetBeansProjects/matricula/web/result.xhtml</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/modelo/ConstanciaPK.java</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/WEB-INF/glassfish-resources.xml</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/modelo/Materia.java</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/modelo/Constancia.java</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/controlador/Captcha.java</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/properties/messages/messages.properties</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/index.xhtml</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/resources/js/jquery.js</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/controlador/MatriculaBean.java</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/negocio/MateriaFacade.java</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/resources/css/style.css</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/src/java/com/udea/modelo/Estudiante.java</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/WEB-INF/beans.xml</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/WEB-INF/faces-config.xml</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/WEB-INF/web.xml</file>
+            <file>file:/Users/alejogra/Documents/udea/materias/arqsoftware/lab2/matricula/web/result.xhtml</file>
         </group>
     </open-files>
 </project-private>

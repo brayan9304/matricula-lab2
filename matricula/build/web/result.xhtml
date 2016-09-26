@@ -48,7 +48,7 @@
                 </p:dataList>
                 
                 <p:column headerText="QR Code">
-                    <p:barcode value="#{matriculaBean.idconstancia}#{matriculaBean.idestudiante}#{matriculaBean.fecha}" 
+                    <p:barcode value="#{matriculaBean.nombreestudiante}#{matriculaBean.idestudiante}#{matriculaBean.fecha}#{matriculaBean.semestre}" 
                                type="qr"  />
                 </p:column>       
             </h:panelGrid>  
