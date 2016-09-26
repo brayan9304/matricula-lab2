@@ -23,7 +23,7 @@
 
         <center>
             <h:form prependId="false" class="contacto">
-                <h1>MATRICULA</h1>
+                <h1>#{msg.matricula}</h1>
                     <h:panelGrid columns="3">
                         
                         <p:outputLabel value="#{msg.sid}" for="student" />
@@ -51,12 +51,12 @@
                         <p:inputText id="semester" label="#{msg.semestre}"
                                      value="#{matriculaBean.semestre}" required="true">
                             <f:attribute name="requiredMessage" value="#{msg.id_required}" />
-                            <f:validateLength maximum="2" />
+                            <f:validateLength minimum="5" maximum="5" />
                         </p:inputText>   
                         <p:message for="semester" styleClass="errormsg"/>
                         
                         <p:outputLabel value="#{msg.foto}" for="foto" />
-                        <p:fileUpload id="foto" value="#{matriculBean.foto}" mode="simple" skinSimple="true"></p:fileUpload>
+                        <p:fileUpload id="foto" value="#{matriculaBean.foto}" mode="simple" skinSimple="true"></p:fileUpload>
                     </h:panelGrid>  
                 
                 <br/>
@@ -76,7 +76,7 @@
                         <f:validateLength minimum="1" />
                     </p:inputText>            
 
-                    <p:commandButton value="Agregar" actionListener="#{matriculaBean.add()}" 
+                    <p:commandButton value="#{msg.agregar}" actionListener="#{matriculaBean.add()}" 
                                      ajax="false" class="margin" ></p:commandButton>
 
                     <p:dataList value="#{matriculaBean.materias}" var="mat" type="ordered">
@@ -93,7 +93,7 @@
                 <p:messages id="msg"/>
                 <p:captcha id="captcha"></p:captcha>    
                 <br/>  
-                <p:commandButton id="x" value="Matricular" 
+                <p:commandButton id="x" value="#{msg.matricular}" 
                                  actionListener="#{matriculaBean.guardar()}"
                                  action="submit"
                                  update="@form:x" />
