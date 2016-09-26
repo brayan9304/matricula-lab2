@@ -1,0 +1,62 @@
+*{
+    font-family: sans-serif;
+    font-size: 15px;
+    color: black;
+}
+h1{
+   font-size: 25px; 
+}
+body{
+    width: 900px;
+    margin: auto;
+    background-color: #E2ECEE;
+}
+
+.contacto{
+    border: 1px solid #CED5D7;
+    border-radius: 6px;
+    padding: 45px 45px 20px;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0px 5px 10px #B5C1C5, 0 0 0 10px #EEF5F7 inset;
+}
+
+.contacto label{
+    display: block;
+    font-weight: bold;
+}
+.contacto div{
+    margin-bottom: 15px;
+}
+.contacto input[type='text'], .contacto textarea{
+    padding: 7px 6px;
+    width: 294px;
+    border: 1px solid #CED5D7;
+    resize: none;
+    box-shadow:0 0 0 3px #EEF5F7;
+    margin: 5px 0;
+}
+.errormsg{
+    color:red; 
+}
+.background{
+    background-color: #009688;
+}
+.marginleft{
+    margin-right: 10px;
+}
+.font-fam{
+    font-family: 'Convergence', sans-serif;
+}
+.margin{
+    margin-left:110px;
+    margin-bottom: 30px;
+}
+@media screen and (max-width:980px) {
+		body {
+			width:98%;
+		}
+		.contacto{
+			width:68%;
+		}
+	}

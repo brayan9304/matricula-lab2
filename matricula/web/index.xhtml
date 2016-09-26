@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
+    Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-
+    transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title><h:outputText value="#{msg.titulo}" /></title>
+        <h:outputStylesheet library="css" name="style.css" />
+        <h:outputScript library="js" name="jquery.js"/>
+        
+    </h:head>
+    <body class="background" id="index">
+
+
+        <h:form>
+            <h:commandButton action="#{matriculaBean.changeLanguage('')}" value="English"
+                             image="#{resource['images:us.png']}" class="marginleft"/>
+            <h:commandButton action="#{matriculaBean.changeLanguage('es')}" value="Español"
+                             image="#{resource['images:co.png']}" />
+        </h:form>
+
+        <center>
+            <h:form prependId="false" class="contacto">
+                <h1>MATRICULA</h1>
+                    <h:panelGrid columns="3">
+
+                        <p:outputLabel value="#{msg.sid}" for="student" />
+                        <p:inputText id="student" label="#{msg.sid}" class="form-control" 
+                                     value="#{matriculaBean.idestudiante}" required="true ">
+                            <f:attribute name="requiredMessage" value="#{msg.id_required}" />
+                        </p:inputText>        
+                        <p:message for="student" styleClass="errormsg"  /> 
+
+                        <p:outputLabel value="#{msg.sname}" for="studentname" />
+                        <p:inputText id="studentname" label="#{msg.sname}"
+                                     value="#{matriculaBean.nombreestudiante}" required="true">
+                            <f:attribute name="requiredMessage" value="#{msg.sname_required}" />
+                        </p:inputText>        
+                        <p:message for="studentname" styleClass="errormsg" /> 
+
+                        <p:outputLabel value="#{msg.sprogram}" for="sprogram" />
+                        <p:inputText id="sprogram" label="#{msg.sprogram}"
+                                     value="#{matriculaBean.programa}" required="true">
+                            <f:attribute name="requiredMessage" value="#{msg.sprogram_required}" />
+                        </p:inputText>        
+                        <p:message for="sprogram" styleClass="errormsg" /> 
+
+                        <p:outputLabel value="#{msg.semestre}" for="semester" />
+                        <p:inputText id="semester" label="#{msg.semestre}"
+                                     value="#{matriculaBean.semestre}" required="true">
+                            <f:attribute name="requiredMessage" value="#{msg.id_required}" />
+                            <f:validateLength maximum="2" />
+                        </p:inputText>            
+                        <p:message for="semester" styleClass="errormsg"/>
+                        
+                        
+                   
+                      
+                    
+                       
+                    
+                        
+                    
+                    
+                    
+                    </h:panelGrid>  
+                
+                <br/>
+                <h2 style="margin-left: 15px">#{msg.materias}</h2>
+                <h:panelGrid>
+                    <p:outputLabel value="#{msg.nombre}" for="mat"  />
+                    <p:inputText id="mat" label="#{msg.nombre}"
+                                 value="#{matriculaBean.materia}" required="true">
+                        <f:attribute name="requiredMessage" value="#{msg.id_required}" />
+                        <f:validateLength minimum="1" />
+                    </p:inputText>            
+
+                    <p:outputLabel value="#{msg.creditos}" for="cred" />
+                    <p:inputText id="cred" label="#{msg.creditos}"
+                                 value="#{matriculaBean.creditos}" required="true">
+                        <f:attribute name="requiredMessage" value="#{msg.id_required}" />
+                        <f:validateLength minimum="1" />
+                    </p:inputText>            
+
+                    <p:commandButton value="Agregar" actionListener="#{matriculaBean.add()}" 
+                                     ajax="false" class="margin" ></p:commandButton>
+
+                    <p:dataList value="#{matriculaBean.materias}" var="mat" type="ordered">
+                        <f:facet name="header">
+                            #{msg.materias}
+                        </f:facet>
+                        #{mat}
+                    </p:dataList>
+
+                </h:panelGrid>
+
+                <br/>        
+
+                <p:messages id="msg"/>
+                <p:captcha id="captcha"></p:captcha>    
+                <br/>  
+                <p:commandButton id="x" value="Matricular" 
+                                 actionListener="#{matriculaBean.guardar()}"
+                                 action="submit"
+                                 update="@form:x" />
+            </h:form>     
+        </center>
+    </body>
+</html>
+
