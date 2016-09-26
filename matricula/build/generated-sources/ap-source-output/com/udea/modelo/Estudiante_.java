@@ -7,10 +7,11 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-09-25T15:57:50")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-09-26T13:25:24")
 @StaticMetamodel(Estudiante.class)
 public class Estudiante_ { 
 
+    public static volatile SingularAttribute<Estudiante, byte[]> foto;
     public static volatile SingularAttribute<Estudiante, Integer> idestudiante;
     public static volatile SingularAttribute<Estudiante, String> programa;
     public static volatile ListAttribute<Estudiante, Materia> materiaCollection;

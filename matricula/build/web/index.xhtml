@@ -12,8 +12,7 @@
         <h:outputScript library="js" name="jquery.js"/>
         
     </h:head>
-    <body class="background" id="index">
-
+    <h:body class="background" id="index">
 
         <h:form>
             <h:commandButton action="#{matriculaBean.changeLanguage('')}" value="English"
@@ -26,7 +25,7 @@
             <h:form prependId="false" class="contacto">
                 <h1>MATRICULA</h1>
                     <h:panelGrid columns="3">
-
+                        
                         <p:outputLabel value="#{msg.sid}" for="student" />
                         <p:inputText id="student" label="#{msg.sid}" class="form-control" 
                                      value="#{matriculaBean.idestudiante}" required="true ">
@@ -53,19 +52,11 @@
                                      value="#{matriculaBean.semestre}" required="true">
                             <f:attribute name="requiredMessage" value="#{msg.id_required}" />
                             <f:validateLength maximum="2" />
-                        </p:inputText>            
+                        </p:inputText>   
                         <p:message for="semester" styleClass="errormsg"/>
                         
-                        
-                   
-                      
-                    
-                       
-                    
-                        
-                    
-                    
-                    
+                        <p:outputLabel value="#{msg.foto}" for="foto" />
+                        <p:fileUpload id="foto" value="#{matriculBean.foto}" mode="simple" skinSimple="true"></p:fileUpload>
                     </h:panelGrid>  
                 
                 <br/>
@@ -108,6 +99,6 @@
                                  update="@form:x" />
             </h:form>     
         </center>
-    </body>
+    </h:body>
 </html>
 

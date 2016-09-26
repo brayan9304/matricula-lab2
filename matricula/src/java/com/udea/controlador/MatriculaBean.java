@@ -12,11 +12,15 @@ import com.udea.modelo.Materia;
 import java.io.Serializable;
 import javax.ejb.EJB;
 import com.udea.negocio.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import javax.faces.context.FacesContext;
+import javax.servlet.http.Part;
+import org.primefaces.model.UploadedFile;
 
 /**
  *
@@ -29,7 +33,7 @@ public class MatriculaBean implements Serializable {
     private int creditos;
     private String nombreestudiante;
     private String programa;
-    private byte[] foto;
+    private UploadedFile foto;
 
     @EJB
     private ConstanciaFacadeLocal constanciaFacade;
@@ -133,11 +137,11 @@ public class MatriculaBean implements Serializable {
         this.idestudiante = idestudiante;
     }
 
-    public byte[] getFoto() {
+    public UploadedFile getFoto() {
         return foto;
     }
 
-    public void setFoto(byte[] foto) {
+    public void setFoto(UploadedFile foto) {
         this.foto = foto;
     }
 
@@ -150,7 +154,16 @@ public class MatriculaBean implements Serializable {
     }
 
     //metodo que se ejecuta al enviar el formulario de la matricula
-    public String guardar() {
+    public String guardar() throws IOException {
+        byte[] fotoBlob = null;
+        if (foto != null) {
+                  try (InputStream is = foto.getInputstream()) {
+                    fotoBlob = new byte[is.available()];
+                    is.read(fotoBlob);
+                    is.close();
+                }
+               
+        }
         Constancia c = new Constancia();
         ConstanciaPK pk = new ConstanciaPK(idconstancia, idestudiante);
         Estudiante e = new Estudiante(idestudiante);
@@ -158,6 +171,7 @@ public class MatriculaBean implements Serializable {
         c.setEstudiante(e);
         e.setNombre(nombreestudiante);
         e.setPrograma(programa);
+        e.setFoto(fotoBlob);
         fecha = new Date();
         c.setFecha(fecha);
         c.setSemestre(semestre);
