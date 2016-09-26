@@ -10,7 +10,7 @@
         <h:outputScript library="js" name="jquery.js"/>
         
     </h:head>
-    <h:body>        
+    <h:body class="background">        
         <h:form>
             <h:commandButton action="#{matriculaBean.changeLanguage('')}" value="English"
                              image="#{resource['images:us.png']}" class="marginleft" />
@@ -52,7 +52,7 @@
                                type="qr"  />
                 </p:column>       
             </h:panelGrid>  
-            <h:commandButton value="Regresar" action="back" actionListener="#{matriculaBean.clear()}" />
+            <h:commandButton value="#{msg.regresar}" action="back" actionListener="#{matriculaBean.clear()}" />
         </h:form> 
         </center>
     </h:body>
